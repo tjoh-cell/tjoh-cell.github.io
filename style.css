@@ -1,0 +1,190 @@
+/* --- Global Styles --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- Navigation --- */
+nav {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-menu li {
+    margin-left: 25px;
+}
+
+.nav-menu a {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.nav-menu a.active {
+    color: #3498db;
+    font-weight: bold;
+}
+
+/* --- Hero Header (Home Page) --- */
+.hero {
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #ffffff;
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-top: 10px;
+    color: #ecf0f1;
+}
+
+.hero-links {
+    margin-top: 30px;
+}
+
+.hero-links a {
+    color: #ffffff;
+    background-color: #3498db;
+    padding: 12px 20px;
+    border-radius: 5px;
+    margin: 0 10px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.hero-links a:hover {
+    background-color: #2980b9;
+    text-decoration: none;
+}
+
+/* --- Home Page Content --- */
+.home-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.project-card-simple {
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.btn {
+    display: inline-block;
+    background: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+.btn:hover {
+    background: #2980b9;
+    text-decoration: none;
+}
+
+
+/* --- Projects Page Grid --- */
+.projects-content {
+    text-align: center;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.project-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 25px;
+    transition: transform 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    margin-top: 0;
+}
+
+.project-links {
+    margin-top: 20px;
+}
+
+.project-links a {
+    margin-right: 15px;
+    font-weight: 500;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+    color: #777;
+    border-top: 1px solid #e0e0e0;
+}
