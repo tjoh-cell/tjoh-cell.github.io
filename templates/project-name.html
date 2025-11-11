@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Rover - Thomas Oh Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Thomas Oh</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="resume.pdf" target="_blank">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="project-detail-content">
+        <h1>Autonomous Rover with SLAM</h1>
+        <p class="project-tagline">
+            A ROS-based differential drive rover capable of real-time mapping and localization in an unknown environment.
+        </p>
+
+        <div class="project-hero-media">
+            <iframe src="https://www.youtube.com/embed/[YOUR_YOUTUBE_VIDEO_ID]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+        <section class="project-section">
+            <h2>Project Overview</h2>
+            <p>
+                This project involved the design, construction, and programming of an autonomous mobile robot. 
+                The primary goal was to implement Simultaneous Localization and Mapping (SLAM) using a 2D LiDAR 
+                sensor and the Robot Operating System (ROS). The rover can explore an unknown indoor environment, 
+                build a map, and localize itself within that map in real-time.
+            </p>
+            <ul>
+                <li>**Duration:** 12 weeks</li>
+                <li>**Team Size:** 3 (My Role: Lead Robotics Software, Mechanical Integration)</li>
+                <li>**Technologies:** ROS (Noetic), Python, C++, RPLiDAR, Raspberry Pi 4, Arduino, SolidWorks</li>
+            </ul>
+        </section>
+
+        <section class="project-section">
+            <h2>Mechanical Design & Fabrication</h2>
+            <p>
+                The rover chassis was designed in **SolidWorks** to accommodate all electronic components, 
+                including the Raspberry Pi, motor drivers, battery, and LiDAR sensor. Emphasis was placed 
+                on modularity and ease of assembly. Components were primarily 3D-printed using PLA.
+            </p>
+            <div class="media-gallery">
+                <img src="images/rover-cad.jpg" alt="SolidWorks CAD Model of Rover">
+                <p class="caption">SolidWorks CAD model showing component placement and chassis design.</p>
+                <img src="images/rover-build.jpg" alt="Rover during assembly">
+                <p class="caption">Assembly in progress, highlighting custom 3D-printed parts.</p>
+            </div>
+            <p>
+                A key challenge was designing a robust differential drive system with sufficient torque for various floor surfaces, 
+                while also ensuring precise encoder feedback for odometry calculations.
+            </p>
+        </section>
+
+        <section class="project-section">
+            <h2>Software Implementation (SLAM & Navigation)</h2>
+            <p>
+                The software stack was built entirely on **ROS Noetic**, leveraging existing packages for LiDAR data processing 
+                (RPLiDAR driver) and motor control (custom Arduino node).
+            </p>
+            <p>
+                **Key Software Components:**
+            </p>
+            <ol>
+                <li>**Odometry Node (C++):** Processed wheel encoder data from an Arduino to publish `odom` topics.</li>
+                <li>**LiDAR Driver:** Used `rplidar_ros` package to acquire 2D laser scans.</li>
+                <li>**`gmapping` (

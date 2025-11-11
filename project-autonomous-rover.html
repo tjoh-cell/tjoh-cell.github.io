@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Autonomous Scanning Rover - Thomas Oh Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Thomas Oh</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="resume.pdf" target="_blank">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="project-detail-content">
+        <h1>Autonomous Scanning Rover</h1>
+        <p class="project-tagline">
+            A 3-person team project for ME100: Electronics for IoT to build a rover that autonomously maps an environment and detects new objects.
+        </p>
+
+        <div class="project-hero-media">
+            <iframe src="https://www.youtube.com/embed/oUCaXZgvTps" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p class="caption">Project demo video from our final report.</p>
+        </div>
+
+        <section class="project-section">
+            <h2>Project Overview</h2>
+            <p>
+                The goal of this project was to design and build a rover that could autonomously follow a preset path and perform environmental scans. On subsequent passes, it would compare new scans to the stored "primary" scan to detect differences (like a new object in its path) and alert the user.
+            </p>
+            <p>
+                The system was built using three ESP32 microcontrollers: a Home ESP32 to send commands, and two on the rover to handle movement and scanning. My primary role focused on the rover-side software, controls, and sensor integration.
+            </p>
+            <ul>
+                <li>Course: ME100: Electronics for IoT</li>
+                <li>Team Size: 3</li>
+                <li>My Role: Rover Software Lead, Controls & Sensor Integration</li>
+                <li>Technologies: MicroPython (Thonny IDE), ESP32, ESP-NOW, PID Control, Ultrasonic Sensors, DC Motors, Encoders</li>
+            </ul>
+        </section>
+
+        <section class="project-section">
+            <h2>My Contribution: Software & Controls</h2>
+            <p>
+                I was responsible for developing the majority of the code for the two rover-side ESP32s. This involved integrating all the hardware components and ensuring they worked together.
+            </p>
+            <div class="media-gallery">
+                <img src="images/rover-hero.jpg" alt="The Autonomous Scanning Rover">
+                <p class="caption">The completed rover with its dual-ultrasonic sensor array.</p>
+            </div>
+            <p>
+                Key Contributions:
+            </p>
+            <ol>
+                <li>
+                    <strong>PID Control:</strong> I implemented a PID control algorithm to regulate the DC motor velocity. This was critical for accurate path-following, as it used feedback from the wheel encoders to correct for movement and turning errors.
+                </li>
+                <li>
+                    <strong>Scanning System:</strong> I programmed the scanning logic, which controlled a servo motor to sweep a dual-ultrasonic sensor array.
+                </li>
+                <li>
+                    <strong>Data & Comms Logic:</strong> I engineered the data-sending logic for the scanning system. The rover would take 62 distance/angle measurements and transmit them as an array of floats back to the Home ESP32 for analysis using the ESP-NOW protocol.
+                </li>
+            </ol>
+        </section>
+
+        <section class="project-section">
+            <h2>Results & Lessons Learned</h2>
+            <p>
+                The rover was successful in demonstrating all the core functionalities. It could follow a path, execute scans, and send data back for comparison. We also successfully implemented the PID controller, which significantly improved movement consistency over simple-timed commands.
+            </p>
+            <p>
+                However, the project also highlighted several real-world engineering challenges:
+            </p>
+            <ul>
+                <li><strong>Inconsistency:</strong> Over longer distances, small encoder errors would accumulate, causing the rover to drift. We also found that different floor textures would cause the wheels to slip during turns, affecting calibration.</li>
+                <li><strong>Data Limitations:</strong> The 250-byte limit of ESP-NOW restricted our scan density. We could only send 62 float values, which sometimes led to false positives if a few measurements were missed. Furthermore, sending raw int values would have been more efficient as opposed to floats and allowed us to double the amount of scans we could take.</li>
+            </ul>
+            <p>
+                This project was a fantastic learning experience in system integration, PID tuning, and sensor limitations. It taught me how to debug complex, multi-component systems and the importance of accounting for real-world inconsistencies (like floor friction) in robot design.
+            </p>
+            <div class="media-gallery">
+                <img src="images/ME100-team-photo.jpg" alt="ME100 Group Photo">
+                <p class="caption">ME100 Group Photo</p>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <h2>Project Links</h2>
+            <div class="project-links">
+                <a href="ME100 DMT Final Project Report (1).pdf" target="_blank" class="btn">View Full Project Report (PDF)</a>
+            </div>
+        </section>
+
+        <a href="projects.html" class="back-to-projects">&lt; Back to All Projects</a>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Thomas Oh. Built with GitHub Pages.</p>
+    </footer>
+
+</body>
+</html>
